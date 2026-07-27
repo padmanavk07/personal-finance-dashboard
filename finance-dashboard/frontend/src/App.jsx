@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
 
 const ProtectedRoute = ({ children }) => {
     const token = localStorage.getItem('token');
@@ -20,10 +21,7 @@ export default function App() {
                     path="/dashboard"
                     element={
                         <ProtectedRoute>
-                            {/* Temporary placeholder until we build Step 9 */}
-                            <div style={{ padding: '2rem', textAlign: 'center' }}>
-                                <h2>Dashboard Protected Route Works!</h2>
-                            </div>
+                            <Dashboard />
                         </ProtectedRoute>
                     }
                 />
