@@ -4,6 +4,7 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Transactions from './pages/Transactions';
 import Budget from './pages/Budget';
+import Analytics from './pages/Analytics';
 
 const ProtectedRoute = ({ children }) => {
     const token = localStorage.getItem('token');
@@ -44,6 +45,15 @@ export default function App() {
                     element={
                         <ProtectedRoute>
                             <Budget />
+                        </ProtectedRoute>
+                    }
+                />
+
+                <Route
+                    path="/analytics"
+                    element={
+                        <ProtectedRoute>
+                            <Analytics />
                         </ProtectedRoute>
                     }
                 />
