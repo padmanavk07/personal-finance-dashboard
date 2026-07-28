@@ -3,6 +3,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Transactions from './pages/Transactions';
+import Budget from './pages/Budget';
 
 const ProtectedRoute = ({ children }) => {
     const token = localStorage.getItem('token');
@@ -34,6 +35,15 @@ export default function App() {
                     element={
                         <ProtectedRoute>
                             <Transactions />
+                        </ProtectedRoute>
+                    }
+                />
+
+                <Route
+                    path="/budget"
+                    element={
+                        <ProtectedRoute>
+                            <Budget />
                         </ProtectedRoute>
                     }
                 />
