@@ -8,12 +8,12 @@ api_bp = Blueprint("api", __name__)
 
 #TRANSACTIONS API ROUTES
 @api_bp.route("/transactions", methods=["POST"])
-@jwt_required
+@jwt_required()
 def add_transaction():
     user_id = get_jwt_identity()
     data = request.get_json()
 
-    tx_date = datetime.strptime(data.get("DATE"), "%Y-%m-%d").date()
+    tx_date = datetime.strptime(data.get("date"), "%Y-%m-%d").date()
     
     new_tx = Transaction(
         user_id=user_id,
